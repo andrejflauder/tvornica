@@ -18,21 +18,23 @@ $(document).ready(function(){
 
 				for(var i in latestNews){
 					output += `
+					<div class="newsResults">
 					<h4>${latestNews[i].title}</h4>
 					<img src="${latestNews[i].urlToImage}">
 					<p>${latestNews[i].description}</p>
 					<p>${latestNews[i].content}</p>
 					<p>Published on: ${latestNews[i].publishedAt}</p>
 					<a href="${latestNews[i].url} class="btn">Read More</a>
+					</div>
 					`;
 				}
 					if(output !== ""){
 
-						$("#newsResults").html(output);
+						$(".results").html(output);
 
 					}else{
 						let NewsNotFound = "There is no news available";
-						$("#newsResults").html(NewsNotFound)
+						$(".results").html(NewsNotFound)
 					}
 				}
 		});
