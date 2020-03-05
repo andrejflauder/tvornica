@@ -19,7 +19,7 @@
   position: absolute;
 }
 
-.yz_boxWrap .boxImgWrap img {
+.yz_boxWrap .boxImgWrap div {
   display: block;
   float: left;
 }
@@ -61,26 +61,23 @@
 
   <div class="yz_boxWrap">
     <div class="boxImgWrap">
-      <img src="slider-image-1.jpg">
-      <img src="slider-image-2.jpg">
-      <img src="slider-image-3.jpg">
-      <img src="slider-image-4.jpg">
-      <img src="slider-image-5.jpg">
-      <img src="slider-image-6.jpg">
+      <div style="border: 10px solid blue;"></div>
+      <div style="border: 10px solid green;"></div>
+      <div style="border: 10px solid red;"></div>
     </div>
   </div>
     <script>
 
     function yz_roll_banner(){
-  $('.boxImgWrap').append($('.boxImgWrap img:first').clone());
+  $('.boxImgWrap').append($('.boxImgWrap div:first').clone());
   // console.log($('.boxImgWrap img').width($('.yz_boxWrap').width()));
-  $('.boxImgWrap img').width($('.yz_boxWrap').width());
-  $('.boxImgWrap').width($('.boxImgWrap img').length*$('.yz_boxWrap').width());
+  $('.boxImgWrap div').width($('.yz_boxWrap').width());
+  $('.boxImgWrap').width($('.boxImgWrap div').length*$('.yz_boxWrap').width());
   var i = 0;
   // roll function
   function banner(){
     $('.boxImgWrap').stop().animate({'left':-i*50+'vw'},500);
-    if(i==$('.boxImgWrap img').length-1){
+    if(i==$('.boxImgWrap div').length-1){
       i=0;
       $('.boxImgWrap').animate({'left':'0px'},1);
     }
@@ -88,7 +85,7 @@
   }
   // bottom nav
   $('.yz_boxWrap').append('<div class="boxBottomNav"><div></div></div>');
-  for(var j=0;j<$('.boxImgWrap img').length-1;j++){
+  for(var j=0;j<$('.boxImgWrap div').length-1;j++){
     $('.boxBottomNav div').append('<a href="javascript:void(0);"></a>');
   }
   $('.boxBottomNav a').click(function(){
@@ -102,7 +99,7 @@
   });
   $('.prev').click(function(){
     if(i==0){
-      i=$('.boxImgWrap img').length-1;
+      i=$('.boxImgWrap div').length-1;
       $('.boxImgWrap').css('left',-i*50+'vw');
     }
     i--;
