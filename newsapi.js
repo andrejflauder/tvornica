@@ -30,11 +30,11 @@ $(document).ready(function(){
 				}
 					if(output !== ""){
 
-						$(".results").html(output);
+						$(".boxImgWrap").html(output);
 
 					}else{
 						let NewsNotFound = "There is no news available";
-						$(".results").html(NewsNotFound)
+						$(".boxImgWrap").html(NewsNotFound)
 					}
 				}
 		});
