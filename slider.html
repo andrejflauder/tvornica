@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+ <script src="jquery-3.4.1.js"></script>
 
   <style>
 
@@ -23,17 +23,6 @@
   display: block;
   float: left;
 }
-
-.yz_boxWrap .boxBottomNav a {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 2px;
-  border-radius: 50%;
-  background-color: rgba(200,200,200,0.5);
-}
-
-.yz_boxWrap .boxBottomNav a.boxAColor { background: #f00; }
 
 .yz_boxWrap .prev, .next {
   position: absolute;
@@ -61,14 +50,14 @@
 
   <div class="yz_boxWrap">
     <div class="boxImgWrap">
-      <div style="border: 10px solid blue;"></div>
-      <div style="border: 10px solid green;"></div>
-      <div style="border: 10px solid red;"></div>
+      <div class="newsResults" style="border: 10px solid blue;"></div>
+      <div class="newsResults" style="border: 10px solid green;"></div>
+      <div class="newsResults" style="border: 10px solid red;"></div>
     </div>
   </div>
     <script>
 
-    function yz_roll_banner(){
+   function yz_roll_banner(){
   $('.boxImgWrap').append($('.boxImgWrap div:first').clone());
   // console.log($('.boxImgWrap img').width($('.yz_boxWrap').width()));
   $('.boxImgWrap div').width($('.yz_boxWrap').width());
