@@ -13,8 +13,8 @@ $(document).ready(function(){
 			method: "GET",
 			dataType: "json",
 			success: function(news){
-				let output = "";
-				let latestNews = news.articles;
+				var output = "";
+				var latestNews = news.articles.slice(0, 5);
 
 				for(var i in latestNews){
 					output += `

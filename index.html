@@ -18,7 +18,7 @@ img {
 .boxImgWrap {
   position: absolute;
   height: 600px;
-  width: 3000px;
+  width: 3500px;
 }
 .newsResults {
   display: block;
@@ -70,7 +70,7 @@ img {
   </div>
 
 <div class="yz_boxWrap">
-    <div class="boxImgWrap">
+    <div class="boxImgWrap" id="quantity" name="quantity" min="1" max="5">
     </div>
 </div>
     
@@ -86,7 +86,7 @@ img {
   // roll function
   function banner(){
     $('.boxImgWrap').stop().animate({'left':-i*600+'px'},500);
-    if(i==$('.boxImgWrap div').length-15){
+    if(i==$('.boxImgWrap div').length){
       i=0;
       $('.boxImgWrap').animate({'left':'0px'},1);
     }
