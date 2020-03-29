@@ -19,12 +19,11 @@ $(document).ready(function(){
 				for(var i in latestNews){
 					output += `
 					<div class="newsResults">
-					<h4>${latestNews[i].title}</h4>
 					<img src="${latestNews[i].urlToImage}">
+					<h4>${latestNews[i].title}</h4>
+					<p>Autor: ${latestNews[i].author}</p>
 					<p>${latestNews[i].description}</p>
-					<p>${latestNews[i].content}</p>
-					<p>Published on: ${latestNews[i].publishedAt}</p>
-					<a href="${latestNews[i].url} class="btn">Read More</a>
+					<a href="${latestNews[i].url} class="btn">Pročitaj članak</a>
 					</div>
 					`;
 				}
@@ -33,7 +32,7 @@ $(document).ready(function(){
 						$(".boxImgWrap").html(output);
 
 					}else{
-						let NewsNotFound = "There is no news available";
+						let NewsNotFound = "Nema vijesti o toj temi";
 						$(".boxImgWrap").html(NewsNotFound)
 					}
 				}
