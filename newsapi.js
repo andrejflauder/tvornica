@@ -1,8 +1,8 @@
 $(document).ready(function(){
-
+//search on click
 	$("#searchbtn").on("click",function(e){
 		e.preventDefault();
-
+//search for entered key word
 	let searchquery = $("#searchquery").val();
 	let url = "http://newsapi.org/v2/top-headlines?q="+searchquery+"&country=us&category=business&apiKey=db6f24957dc748f6a86e70bbd1f9bcac";
 
@@ -15,7 +15,8 @@ $(document).ready(function(){
 			success: function(news){
 				var output = "";
 				var latestNews = news.articles.slice(0, 5);
-
+				var roll = document.getElementsByClassName("roll");
+//output html element with search results
 				for(var i in latestNews){
 					output += `
 					<div class="newsResults">
@@ -28,9 +29,8 @@ $(document).ready(function(){
 					`;
 				}
 					if(output !== ""){
-
 						$(".boxImgWrap").html(output);
-
+						$(".roll").css("display", "block");
 					}else{
 						let NewsNotFound = "Nema vijesti o toj temi";
 						$(".boxImgWrap").html(NewsNotFound)

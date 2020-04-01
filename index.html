@@ -4,82 +4,8 @@
 <head>
 <title>News API</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-<style type="text/css">
-body {
-	margin-left: 30%;
-}
-.newsResults img {
-  width: 40%;
-  float: left;
-  }
-.newsResults h4, p, a {
-	position: relative;
-	width: 55%;
-	float: right;
-	right: 10px;
-	text-align: justify;
-	font-family: Roboto;
-}
-.yz_boxWrap {
-  position: absolute;
-  width: 500px;
-  height: 250px;
-  display: block;
-  overflow: hidden;
-}
-.box {
-	position: absolute;
-	top: 130px;
-	height: 250px;
-	width: 500px;
-}
-.boxImgWrap {
-  position: absolute;
-  height: 250px;
-  width: 3500px;
-}
-.newsResults {
-  display: block;
-  float: left;
-  height: 250px;
-  width: 500px;
-  margin-left: 0;
-  font-size: 12px;
-  background-color: #F2F2F2;
-}
-.prev, .next {
-  position: absolute;
-  top: calc(50% - 40px);
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  text-align: center;
-  line-height: 40px;
-  font-size: 30px;
-  color: #fff;
-  font-weight: bolder;
-}
+<link rel="stylesheet" type="text/css" href="style.css">
 
-.prev { left: -50px; }
-
-.next { right: -50px; }
-label {
-  position: relative;
-}
-
-input {
-	width: 490px;
-	height: 30px;
-	padding-left: 10px;
-}
-#searchbtn {
-	position: absolute;
-	right: 10px;
-	top: 0;
-	cursor: pointer;
-}
-
-</style>
 </head>
 <body>
   
@@ -106,53 +32,8 @@ input {
 
 <script src="jquery-3.4.1.js"></script>
 <script src="newsapi.js"></script>
-<script>
-var enter = document.getElementById("searchquery");
-enter.addEventListener("keydown", function(event) {
-  if (event.keyCode === 13) {
-   event.preventDefault();
-   document.getElementById("searchbtn").click();
-  }
-});
-</script>
-<script>
-
-    function yz_roll_banner(){
-  $('.boxImgWrap').append($('.boxImgWrap div:first').clone());
-  // console.log($('.boxImgWrap img').width($('.yz_boxWrap').width()));
-  var i = 0;
-  // roll function
-  function banner(){
-    $('.boxImgWrap').stop().animate({'left':-i*500+'px'},500);
-    if(i==$('.boxImgWrap div').length){
-      i=0;
-      $('.boxImgWrap').animate({'left':'0px'},1);
-    }
-    $('.boxBottomNav a').eq(i).css('background-color','#f00').siblings().css('background-color','rgba(200,200,200,0.5)');
-  } 
-  // next/prev button
-  $('.box').append('<div class="prev"><img src="left-arrow.svg"></div><div class="next"><img src="right-arrow.svg"></div>');
-
-  $('.prev').click(function(){
-    if(i==0){
-      i=$('.boxImgWrap div').length;
-      $('.boxImgWrap').css('left',-i*50+'vw');
-    }
-    i--;
-    banner();
-  })
-  $('.next').click(function(){
-    i++;
-    banner();
-  })
-  // auto play
-  
-  
-}
-   yz_roll_banner();
-
-
-</script> 
+<script src="slider.js"></script>
+<script src="enter.js"></script>
 </body>
 
 </html>
